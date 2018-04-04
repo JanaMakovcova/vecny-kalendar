@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../static/css/styly.css"
+          th:href="${'css/styly.css'}"/>
+    <link rel="icon" href="../static/images/favicon.png"
+          th:href="${'images/favicon.png'}"/>
+    <title>Věčný kalendář</title>
+</head>
+<body>
+    <div class="page">
+
+
+        <!-- puvodni
+
+        <form method="post">
+            <input name="rok"><br>
+            <input name="mesic"> <br>
+            <input name="den">    <br>
+            <input type="radio" name="zena" value="false" checked> Male
+            <input type="radio" name="zena" value="true"> Female<br>
+            <input type="submit" value="Odeslat">
+
+        </form>
+        -->
+        <h2 class ="flex-outer">Věčný kalendář</h2>
+        <form method="post">
+            <ul class="flex-outer">
+
+                <li>
+                    <label for="form-rok">Rok</label>
+                    <input type="number" name="rok" id="form-rok" placeholder="Zadej rok narození">
+                </li>
+                <li>
+                    <label for="form-mesic">Měsíc</label>
+                    <input type="number" name="mesic" id="form-mesic" min="1" max="12" placeholder="Zadej měsíc narození">
+                </li>
+                <li>
+                    <label for="form-den">Den</label>
+                    <input type="number" name="den" id="form-den" min="1" max="31" placeholder="Zadej den narození">
+                </li>
+                <li>
+                    <p></p>
+                    <ul class="flex-inner">
+                        <!-- list items here -->
+                        <li>
+                            <input type="radio" name="zena" id="form-muz" value="false" checked>
+                            <label for="form-muz">Muž</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="zena" id="form-zena"value="true">
+                            <label for="form-zena">Žena</label>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="submit" id="buttonSumbit" value="Odeslat">
+                </li>
+            </ul>
+        </form>
+
+        
+
+    </div>
+</body>
+</html>

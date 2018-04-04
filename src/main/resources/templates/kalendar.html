@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../static/css/styly.css"
+          th:href="${'css/styly.css'}"/>
+    <link rel="icon" href="../static/images/favicon.png"
+          th:href="${'images/favicon.png'}"/>
+    <title>Věčný kalendář</title>
+</head>
+<body>
+    <div class="page">
+         <h2 class="flex-outer" th:text="${#temporals.format(datumZadane,'dd.MMMM yyyy')}">Zadané datum</h2>
+        <div class="flex-outer">
+            <p class="smaller">den v týdnu</p>
+            <h3 th:text="${#temporals.dayOfWeekName(datumZadane)}">sobota</h3>
+                <p class="smaller">Uplynulo dní:</p>
+                <h2 th:text="${dnu}">10000</h2>
+        </div>
+        <h2 class="flex-outer" th:text="${#temporals.format(dnesek,'dd.MMMM yyyy')}">Dnešní datum</h2>
+        <div class="flex-outer">
+            <p class="smaller">den v týdnu</p>
+            <h3 th:text="${#temporals.dayOfWeekName(dnesek)}">sobota</h3>
+                <p class ="smaller">Ještě Ti zbývá asi dní</p>
+                <h2 th:text="${dnuSmrt}">10000</h2>
+        </div>
+    </div>
+    <footer>Muži se průměrně dožívají 76 a ženy 82 let</footer>
+</body>
+</html>
