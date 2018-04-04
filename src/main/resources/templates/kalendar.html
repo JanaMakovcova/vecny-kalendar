@@ -12,6 +12,8 @@
     <title>Věčný kalendář</title>
 </head>
 <body>
+    <!--/*@thymesVar id="dnuSmrt" type="java.lang.Integer"*/-->
+    <!--/*@thymesVar id="dnu" type="java.lang.Integer"*/-->
     <div class="page">
          <h2 class="flex-outer" th:text="${#temporals.format(datumZadane,'dd.MMMM yyyy')}">Zadané datum</h2>
         <div class="flex-outer">

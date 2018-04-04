@@ -20,7 +20,13 @@ public class HlavniController {
         LocalDate datumPrumerneSmrti;
         int ZENYPRUMER = 76;
         int MUZIPRUMER = 82;
-        datum1 = LocalDate.of(zadaneDatumNarozeni.getRok(), zadaneDatumNarozeni.getMesic(), zadaneDatumNarozeni.getDen());
+
+        try {
+            datum1 = LocalDate.of(zadaneDatumNarozeni.getRok(), zadaneDatumNarozeni.getMesic(), zadaneDatumNarozeni.getDen());
+        } catch (Exception e) {
+            return new ModelAndView("chyba");
+        }
+        
         long dnuMezi = ChronoUnit.DAYS.between(datum1, LocalDate.now());
         if(zadaneDatumNarozeni.isZena()) {
             datumPrumerneSmrti = datum1.plusYears(MUZIPRUMER);
